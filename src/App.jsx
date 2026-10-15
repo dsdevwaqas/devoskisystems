@@ -56,7 +56,6 @@ const pageComponents = Object.fromEntries(Object.entries(pages).map(([route, pag
 
 function FluidBackground() {
   const ref = useRef(null);
-  const initialBurstDone = useRef(false);
   const { pathname } = useLocation();
   useEffect(() => initFluid(ref.current), []);
   useEffect(() => {
@@ -68,10 +67,9 @@ function FluidBackground() {
     };
     const isMobile = () => matchMedia('(max-width: 900px)').matches;
     const arrive = () => {
-      if (!isMobile() && initialBurstDone.current) return;
-      if (burst(0.65)) initialBurstDone.current = true;
+      if (isMobile()) burst(0.65);
     };
-    // Desktop: one arrival per document load. Mobile keeps route/ambient bursts.
+    // Automatic arrival and ambient bursts are mobile-only.
     const arrival = setTimeout(() => { if (!document.querySelector('.site-preloader')) arrive(); }, 200);
     const introArrival = arrive;
     window.addEventListener('devoski:intro-complete', introArrival);

@@ -44,10 +44,13 @@ check($response['status'] === 200 && $mailer->calls === 1, 'Valid enquiry sent')
 check($mailer->last['firstName'] === 'Ali', 'HTML stripped from plain text field');
 $response = $app->handle(headers(), json_encode(payload()));
 check($response['status'] === 200 && $mailer->calls === 1 && $verifier->calls === 1, 'Sent request replay acknowledged without remailing');
+$response = $app->handle(headers(), json_encode(payload(['recaptchaToken' => 'fresh-test-token'])));
+check($response['status'] === 200 && $mailer->calls === 1 && $verifier->calls === 1, 'Fresh CAPTCHA replay acknowledged without remailing');
 check($app->handle(headers(), json_encode(payload(['message' => 'Changed message for same ID.'])))['status'] === 409, 'Changed payload cannot reuse a request ID');
 
 [$badCaptcha, $v, $m] = fixture([], true);
 check($badCaptcha->handle(headers(), json_encode(payload()))['status'] === 422 && $m->calls === 0, 'Failed CAPTCHA never sends mail');
+check($badCaptcha->handle(headers(), json_encode(payload(['recaptchaToken' => 'fresh-test-token'])))['status'] === 422 && $v->calls === 2 && $m->calls === 0, 'Failed CAPTCHA can be retried with a fresh token');
 [$badSmtp, $v, $m] = fixture([], false, true);
 $response = $badSmtp->handle(headers(), json_encode(payload()));
 check($response['status'] === 502 && $response['body']['code'] === 'delivery_unknown', 'SMTP failure safely reported');

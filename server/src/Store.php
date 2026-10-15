@@ -44,7 +44,7 @@ final class Store
 
     public function fingerprint(array $data): string
     {
-        unset($data['turnstileToken'], $data['requestId'], $data['websiteConfirm']);
+        unset($data['recaptchaToken'], $data['requestId'], $data['websiteConfirm']);
         ksort($data);
         return hash_hmac('sha256', json_encode($data, JSON_THROW_ON_ERROR), $this->key);
     }

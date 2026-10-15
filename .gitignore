@@ -27,3 +27,5 @@ preview/
 Thumbs.db
 server/config.*.php
 !server/config.example.php
+
+namecheap-github-deploy.pub

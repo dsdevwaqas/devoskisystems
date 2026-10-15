@@ -1,0 +1,14 @@
+/* The native scrollbar and fixed WebGL canvas remain attached to the viewport. */
+html.lenis{scroll-behavior:auto!important}
+.reading-progress{position:fixed;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--purple),var(--gold));transform:scaleX(0);transform-origin:left center;z-index:100;pointer-events:none}
+.heading-line{display:block;overflow:clip;padding-bottom:.11em;margin-bottom:-.11em}
+.heading-line-inner{display:block;transform-origin:left bottom}
+.page-content{min-width:0}
+.button{position:relative;overflow:hidden}
+.button>span,.text-link>span,.service-links a>span{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.button:hover>span,.text-link:hover>span,.service-links a:hover>span{transform:translate(3px,-3px)}
+.service-card,.blog-card{transition:border-color .25s,background .25s,box-shadow .25s,transform .25s}
+.service-card:hover,.blog-card:hover{box-shadow:0 16px 40px #05030d30}
+.blog-card>img{transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.blog-card:hover>img{transform:scale(1.025)}
+@media(prefers-reduced-motion:reduce){.reading-progress{display:none}.heading-line{overflow:visible}.button:hover>span,.text-link:hover>span,.service-links a:hover>span,.blog-card:hover>img{transform:none}}

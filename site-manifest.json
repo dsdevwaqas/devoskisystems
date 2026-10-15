@@ -1,0 +1,267 @@
+[
+  {
+    "page": "about-us.html",
+    "source": "/about-us/",
+    "title": "About Us"
+  },
+  {
+    "page": "advertisement-design.html",
+    "source": "/advertisement-design/",
+    "title": "Advertisement Design"
+  },
+  {
+    "page": "android-app.html",
+    "source": "/android-app/",
+    "title": "Android App"
+  },
+  {
+    "page": "app-store-optimization.html",
+    "source": "/app-store-optimization/",
+    "title": "App Store Optimization"
+  },
+  {
+    "page": "art-illustration.html",
+    "source": "/art-illustration/",
+    "title": "Art & Illustration"
+  },
+  {
+    "page": "aws-support.html",
+    "source": "/aws-support/",
+    "title": "AWS Support"
+  },
+  {
+    "page": "blog.html",
+    "source": "/blog/",
+    "title": "Blog"
+  },
+  {
+    "page": "brand-identity.html",
+    "source": "/brand-identity/",
+    "title": "Brand Identity"
+  },
+  {
+    "page": "brochures-and-flyers-designing.html",
+    "source": "/brochures-and-flyers-designing/",
+    "title": "Brochures and Flyers Designing"
+  },
+  {
+    "page": "bug-fixing.html",
+    "source": "/bug-fixing/",
+    "title": "Bug Fixing"
+  },
+  {
+    "page": "business-stationery-designing.html",
+    "source": "/business-stationery-designing/",
+    "title": "Business Stationery Designing"
+  },
+  {
+    "page": "catalogues-booklets-designing.html",
+    "source": "/catalogues-booklets-designing/",
+    "title": "Catalogues & Booklets Designing"
+  },
+  {
+    "page": "cloud-computing.html",
+    "source": "/cloud-computing/",
+    "title": "Cloud Computing"
+  },
+  {
+    "page": "cloud-services.html",
+    "source": "/cloud-services/",
+    "title": "Cloud Services"
+  },
+  {
+    "page": "cms-development.html",
+    "source": "/cms-development/",
+    "title": "CMS Development"
+  },
+  {
+    "page": "contact-us.html",
+    "source": "/contact-us/",
+    "title": "Contact Us"
+  },
+  {
+    "page": "content-writing.html",
+    "source": "/content-writing/",
+    "title": "Content Writing"
+  },
+  {
+    "page": "custom-website-development.html",
+    "source": "/custom-website-development/",
+    "title": "Custom Website Development"
+  },
+  {
+    "page": "digital-banner.html",
+    "source": "/digital-banner/",
+    "title": "Digital Banner"
+  },
+  {
+    "page": "ecommerce-development.html",
+    "source": "/ecommerce-development/",
+    "title": "eCommerce Development"
+  },
+  {
+    "page": "email-marketing.html",
+    "source": "/email-marketing/",
+    "title": "Email Marketing"
+  },
+  {
+    "page": "enterprise-app-development.html",
+    "source": "/enterprise-app-development/",
+    "title": "Enterprise App Development"
+  },
+  {
+    "page": "get-a-quote.html",
+    "source": "/get-a-quote/",
+    "title": "Get A Quote"
+  },
+  {
+    "page": "index.html",
+    "source": "/",
+    "title": "Home"
+  },
+  {
+    "page": "hosting-domain.html",
+    "source": "/hosting-domain/",
+    "title": "Hosting & Domain"
+  },
+  {
+    "page": "hybrid-app-development.html",
+    "source": "/hybrid-app-development/",
+    "title": "Hybrid App Development"
+  },
+  {
+    "page": "improve-technical-support.html",
+    "source": "/improve-technical-support/",
+    "title": "Improve Technical Support"
+  },
+  {
+    "page": "ios-app-development.html",
+    "source": "/ios-app-development/",
+    "title": "iOS App Development"
+  },
+  {
+    "page": "it-consultancy.html",
+    "source": "/it-consultancy/",
+    "title": "IT Consultancy"
+  },
+  {
+    "page": "landing-page-design-development.html",
+    "source": "/landing-page-design-development/",
+    "title": "Landing Page Design & Development"
+  },
+  {
+    "page": "logo-design.html",
+    "source": "/logo-design/",
+    "title": "Logo Design"
+  },
+  {
+    "page": "mobile-app-design.html",
+    "source": "/mobile-app-design/",
+    "title": "Mobile App Design"
+  },
+  {
+    "page": "packages.html",
+    "source": "/packages/",
+    "title": "Packages"
+  },
+  {
+    "page": "portfolio.html",
+    "source": "/portfolio/",
+    "title": "Portfolio"
+  },
+  {
+    "page": "print-designing.html",
+    "source": "/print-designing/",
+    "title": "Print Designing"
+  },
+  {
+    "page": "privacy-policy.html",
+    "source": "/privacy-policy/",
+    "title": "Privacy Policy"
+  },
+  {
+    "page": "psd-to-html.html",
+    "source": "/psd-to-html/",
+    "title": "PSD to HTML"
+  },
+  {
+    "page": "responsive-website-development.html",
+    "source": "/responsive-website-development/",
+    "title": "Responsive Website Development"
+  },
+  {
+    "page": "search-engine-marketing.html",
+    "source": "/search-engine-marketing/",
+    "title": "Search Engine Marketing"
+  },
+  {
+    "page": "search-engine-optimization.html",
+    "source": "/search-engine-optimization/",
+    "title": "Search Engine Optimization"
+  },
+  {
+    "page": "server-management.html",
+    "source": "/server-management/",
+    "title": "Server Management"
+  },
+  {
+    "page": "serverless-support.html",
+    "source": "/serverless-support/",
+    "title": "Serverless Support"
+  },
+  {
+    "page": "services.html",
+    "source": "/services/",
+    "title": "Services"
+  },
+  {
+    "page": "social-media-management.html",
+    "source": "/social-media-management/",
+    "title": "Social Media Management"
+  },
+  {
+    "page": "social-media-marketing.html",
+    "source": "/social-media-marketing/",
+    "title": "Social Media Marketing"
+  },
+  {
+    "page": "social-media-optimization.html",
+    "source": "/social-media-optimization/",
+    "title": "Social Media Optimization"
+  },
+  {
+    "page": "terms-conditions.html",
+    "source": "/terms-conditions/",
+    "title": "Terms & Conditions"
+  },
+  {
+    "page": "top-trends-of-design-for-2020.html",
+    "source": "/top-trends-of-design-for-2020/",
+    "title": "Top Trends of Design for 2020"
+  },
+  {
+    "page": "video-creation.html",
+    "source": "/video-creation/",
+    "title": "Video Creation"
+  },
+  {
+    "page": "web-application.html",
+    "source": "/web-application/",
+    "title": "Web Application"
+  },
+  {
+    "page": "web-design.html",
+    "source": "/web-design/",
+    "title": "Web Design"
+  },
+  {
+    "page": "web-vs-app-development.html",
+    "source": "/web-vs-app-development/",
+    "title": "Web vs App Development"
+  },
+  {
+    "page": "website-management.html",
+    "source": "/website-management/",
+    "title": "Website Management"
+  }
+]

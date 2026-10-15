@@ -1,0 +1,56 @@
+name: Deploy to Namecheap
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: namecheap-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    # Off until the owner configures SSH and opts in. Manual runs are also supported.
+    if: github.event_name == 'workflow_dispatch' || vars.NAMECHEAP_DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: shivammathur/setup-php@d52fc211a0436f8839a587b3b5b8efddab4744ea # v2
+        with:
+          php-version: '8.2'
+          extensions: curl, mbstring, openssl, pdo_sqlite
+          tools: composer:v2
+          coverage: none
+      - name: Require the public CAPTCHA site key
+        env:
+          VITE_RECAPTCHA_SITE_KEY: ${{ vars.VITE_RECAPTCHA_SITE_KEY }}
+        run: test -n "$VITE_RECAPTCHA_SITE_KEY" || { echo 'Set the VITE_RECAPTCHA_SITE_KEY repository variable.'; exit 1; }
+      - run: npm ci
+      - run: composer install --working-dir=server --no-dev --prefer-dist --no-interaction --no-progress
+      - run: npm run build
+        env:
+          VITE_RECAPTCHA_SITE_KEY: ${{ vars.VITE_RECAPTCHA_SITE_KEY }}
+      - run: npm run check && npm test && php tests/backend.php
+      - name: Deploy over verified SSH
+        shell: bash
+        env:
+          SSH_HOST: ${{ secrets.NAMECHEAP_SSH_HOST }}
+          SSH_USER: ${{ secrets.NAMECHEAP_SSH_USER }}
+          SSH_PORT: ${{ secrets.NAMECHEAP_SSH_PORT }}
+          SSH_PRIVATE_KEY: ${{ secrets.NAMECHEAP_SSH_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.NAMECHEAP_SSH_KNOWN_HOSTS }}
+          PUBLIC_WEB_ROOT: ${{ secrets.NAMECHEAP_PUBLIC_WEB_ROOT }}
+          PRIVATE_BACKEND_ROOT: ${{ secrets.NAMECHEAP_PRIVATE_BACKEND_ROOT }}
+        run: bash scripts/deploy-namecheap.sh

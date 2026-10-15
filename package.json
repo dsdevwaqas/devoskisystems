@@ -1,0 +1,33 @@
+{
+  "name": "devoski-fluid-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Devoski Systems website with a reusable gold and indigo WebGL fluid background",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "node scripts/prepare-content.cjs && vite build",
+    "preview": "vite preview",
+    "check": "node scripts/check-react.cjs",
+    "test": "node --test tests/frontend.test.mjs",
+    "predev": "node scripts/prepare-content.cjs",
+    "prestart": "node scripts/prepare-content.cjs",
+    "test:browser": "playwright test",
+    "test:php": "php tests/backend.php"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.3.0",
+    "gsap": "^3.15.0",
+    "locomotive-scroll": "^5.0.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@vitejs/plugin-react": "^6.1.2",
+    "vite": "^8.3.4"
+  },
+  "type": "module"
+}

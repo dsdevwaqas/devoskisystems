@@ -1,0 +1,6 @@
+﻿/* Add class="home2-fluid" to body. Keep your own content/theme styles. */
+body.home2-fluid{background:#111025;isolation:isolate}
+body.home2-fluid:before{content:'';position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 80% 20%,#302354,transparent 65%),#111025}
+#site-fluid{position:fixed;inset:0;width:100%;height:100dvh;z-index:-1;pointer-events:none;opacity:.72}
+@media(max-width:760px){#site-fluid{opacity:.5}}
+@media(prefers-reduced-motion:reduce){#site-fluid{display:none}}

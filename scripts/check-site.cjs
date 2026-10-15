@@ -1,0 +1,5 @@
+const fs=require('fs'),path=require('path'),assert=require('assert');
+const pages=JSON.parse(fs.readFileSync('site-manifest.json'));
+let checked=0,images=0;
+for(const p of pages){let html=fs.readFileSync(p.page,'utf8');assert(html.includes('id="site-fluid"'),p.page+' missing fluid canvas');assert(html.includes('<h1>'),p.page+' missing h1');for(const m of html.matchAll(/(?:href|src)="([^"]+)"/g)){let url=m[1];if(/^(https?:|mailto:|tel:|#|data:)/.test(url))continue;let [file,hash]=url.split('#');assert(fs.existsSync(file),`${p.page}: missing ${file}`);if(hash&&file.endsWith('.html'))assert(fs.readFileSync(file,'utf8').includes(`id="${hash}"`),`${p.page}: missing anchor ${url}`);checked++;if(file.startsWith('assets/'))images++}assert(!html.includes('mailto:mailto:'),p.page+' broken email link');assert(!html.includes('href="https://devoski-old.devoskisystems.com/')&&!html.includes('src="https://devoski-old.devoskisystems.com/'),p.page+' has unmigrated internal URL')}
+console.log(`PASS: ${pages.length} pages; ${checked} local references; ${images} image references.`);

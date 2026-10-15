@@ -1,0 +1,5 @@
+Options -Indexes
+LimitRequestBody 65536
+<FilesMatch "^(?!contact\.php$).+">
+    Require all denied
+</FilesMatch>

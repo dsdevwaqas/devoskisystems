@@ -1,0 +1,16 @@
+{
+  "name": "devoski/contact-backend",
+  "description": "Private PHP contact backend for devoskisystems.com",
+  "type": "project",
+  "require": {
+    "php": ">=8.2",
+    "ext-curl": "*",
+    "ext-mbstring": "*",
+    "ext-openssl": "*",
+    "ext-pdo": "*",
+    "ext-pdo_sqlite": "*",
+    "phpmailer/phpmailer": "^7.0"
+  },
+  "autoload": { "psr-4": { "Devoski\\Contact\\": "src/" } },
+  "config": { "sort-packages": true, "optimize-autoloader": true }
+}
